@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ActorStorage extends AbstractActor {
+    private static final String OK = "OK\n";
+    private static final String FAIL = "FAIL\n";
     private Map<String, ArrayList<Test>> store = new HashMap();
 
     public void addTest(Test test) {
@@ -23,9 +25,9 @@ public class ActorStorage extends AbstractActor {
         if (store.containsKey(packageId)) {
             for (Test test : store.get(packageId)) {
                 if (test.getRealResult().equals(test.getExpecteResult())) {
-                    testResults.put(test.getTestName(), "OK");
+                    testResults.put(test.getTestName(), OK);
                 } else {
-                    testResults.put(test.getTestName(), "FAIL");
+                    testResults.put(test.getTestName(), FAIL);
                 }
             }
         }
