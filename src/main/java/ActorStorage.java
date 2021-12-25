@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ActorStorage extends AbstractActor {
-    private static final String OK = "OK\n";
-    private static final String FAIL = "FAIL\n";
+    private static final String OK = "OK";
+    private static final String FAIL = "FAIL";
     private Map<String, ArrayList<Test>> store = new HashMap();
 
     public void addTest(Test test) {
